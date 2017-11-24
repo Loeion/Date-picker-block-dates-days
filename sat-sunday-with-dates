@@ -1,0 +1,31 @@
+var specificDates = [[12, 29, 2017], [1, 1, 2017]]; //here get your list of holiday 
+$( "#holidays" ).datepicker({ 
+        beforeShowDay: yeahHolidays
+});
+
+function yeahHolidays(date) {
+ 
+            var day = date.getDay(), Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6;
+            var week = 0 | date.getDate() / 7
+         
+            //satruday
+           
+                if (day == 6)  {
+                    return [false];
+                }
+            //sunday
+            if (day == 0)
+            {
+                return [false];
+            }
+            for (i = 0; i < specificDates.length; i++) {
+                if (date.getMonth() == specificDates[i][0] - 1 &&
+                date.getDate() == specificDates[i][1] &&
+                date.getFullYear() == specificDates[i][2]) {
+                    return [false];
+                }
+            }
+ 
+            return [true];
+        }
+<input id="holidays" type="text">
