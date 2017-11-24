@@ -16,3 +16,4 @@ $( "#specificdates" ).datepicker({
               } 
               return [true];
           }
+          <input id="specificdates" type="text">
