@@ -1,0 +1,26 @@
+$( "#specificHolidays" ).datepicker({ 
+        beforeShowDay: secondFourthSatandAllSunday
+});
+
+function secondFourthSatandAllSunday(date) { 
+            var day = date.getDay(), Sunday = 0, Monday = 1, Tuesday = 2, Wednesday = 3, Thursday = 4, Friday = 5, Saturday = 6;
+            var week = 0 | date.getDate() / 7         
+            //satruday
+            if (week == 1 || week == 3) {
+                if (day == 6)  {  
+                    return [false];
+                }
+            }
+ 
+            // sunday
+            if (day == 0)
+            {
+                return [false];
+            } 
+            return [true];
+        }
+
+
+
+
+<input id="specificHolidays" type="text">
