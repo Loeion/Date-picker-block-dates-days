@@ -1,0 +1,6 @@
+var specificdates = [[12, 29, 2017], [10, 1, 2017]]; //here get your list of holiday 
+$( "#specificdates" ).datepicker({ 
+        beforeShowDay: specificdates
+});
+
+<input id="specificdates" type="text">
